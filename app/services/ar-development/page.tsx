@@ -167,11 +167,11 @@ const packages = [
 
 {
 name:"Starter AR",
-price:"Rp 5.000.000",
+price:"Rp 6.000.000",
 description:"Cocok untuk media pembelajaran, promosi produk, dan AR sederhana.",
 features:[
 "Marker-based AR Experience",
-"3 Scene Interaktif",
+"5 Scene Interaktif",
 "Unlimited konten halaman",
 "Integrasi ke aplikasi existing",
 "Support 1 bulan",
@@ -186,11 +186,11 @@ popular:true,
 description:"Cocok untuk aplikasi edukasi, simulasi dan game interaktif.",
 features:[
 "Aplikasi 2D / 3D Custom",
-"3 Level Interaktif",
+"5 Level Interaktif",
 "Integrasi monetisasi & analytics",
 "Publish PlayStore/AppStore",
 "Support 3 bulan",
-"Estimasi 4-6 minggu"
+"Estimasi 3-5 minggu"
 ]
 },
 
