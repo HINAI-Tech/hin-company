@@ -899,6 +899,90 @@ const portfolioItems: PortfolioItem[] = [
       'Deployment and Maintenance of Attendance and Grading Platform',
     ],
   },
+  {
+  id: 39,
+  title: 'NÉVORA – Premium Specialty Coffee Brand Website',
+  category: 'Landing Page',
+  images: [
+    '/All Portfolio/Nevora/landing.png',
+    '/All Portfolio/Nevora/menu.png',
+    '/All Portfolio/Nevora/story.png',
+    '/All Portfolio/Nevora/journal.png',
+  ],
+
+  client: 'NÉVORA Coffee Roastery',
+
+  year: '2026',
+
+  description:
+    'Premium brand website for NÉVORA Coffee Roastery, designed to present the brand identity, coffee collection, roasting process, brand story, and digital experience through a modern editorial interface with immersive visual presentation.',
+
+  results: [
+    'Established a premium digital identity for the NÉVORA coffee brand',
+    'Created an immersive website experience for showcasing coffee products and brand story',
+    'Structured product, story, roastery, and journal content into an intuitive user experience',
+    'Responsive interface optimized for desktop, tablet, and mobile devices',
+    'Strengthened brand credibility through professional visual design and digital presentation',
+    'Created a scalable website structure for future content and product expansion',
+  ],
+
+  services: [
+    'Landing Page Development',
+    'UI/UX Design',
+    'Brand Website Development',
+    'Responsive Web Design',
+    'Interactive Web Experience',
+    'Product Showcase Design',
+    'Brand Storytelling',
+    'Content Structure & Information Architecture',
+    'Performance Optimization',
+    'Deployment & Maintenance',
+  ],
+},
+{
+  id: 40,
+  title: 'WULING – Modern Automotive Brand Website',
+  category: 'Website',
+  images: [
+    '/All Portfolio/Wuling/home.png',
+    '/All Portfolio/Wuling/models.png',
+    '/All Portfolio/Wuling/detail.png',
+    '/All Portfolio/Wuling/configator.png',
+  ],
+
+  client: 'Wuling Motors',
+
+  year: '2026',
+
+  description:
+    'Modern automotive brand website for Wuling Motors, designed to present vehicle models, automotive technologies, specifications, features, promotions, and brand information through a premium digital experience with immersive visual presentation and interactive product exploration.',
+
+  results: [
+    'Created a modern digital experience for presenting the Wuling automotive brand',
+    'Presented vehicle models through an immersive and structured product showcase',
+    'Organized vehicle specifications, features, technologies, and key information into an intuitive user experience',
+    'Created interactive product exploration sections to improve customer engagement',
+    'Strengthened brand credibility through a professional automotive website interface',
+    'Designed responsive experiences optimized for desktop, tablet, and mobile devices',
+    'Created a scalable website structure for future vehicle models, campaigns, and automotive content',
+    'Improved digital presentation of Wuling products through cinematic visuals and interactive interfaces',
+  ],
+
+  services: [
+    'Website Development',
+    'Automotive Brand Website',
+    'UI/UX Design',
+    'Responsive Web Design',
+    'Interactive Web Experience',
+    'Vehicle Product Showcase',
+    'Vehicle Detail Page Design',
+    'Product Specification Interface',
+    'Brand Storytelling',
+    'Content Structure & Information Architecture',
+    'Performance Optimization',
+    'Deployment & Maintenance',
+  ],
+},
 ];
 
 export default function PortfolioPage() {
