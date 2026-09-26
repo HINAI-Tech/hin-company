@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const REDIRECT_URL = "https://forms.gle/GyEEePHAXCGvQgYt7";
+const REDIRECT_URL = "https://docs.google.com/forms/d/e/1FAIpQLSer1Nfr7D36lMk6ZuQfYi1hvFeuAJw6RpxEngiEo0xS563oEg/viewform";
 const REDIRECT_SECONDS = 10;
 
 export default function FormPage() {
