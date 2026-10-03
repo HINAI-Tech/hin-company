@@ -103,13 +103,12 @@ export function Navigation() {
       ],
     },
 
-    { href: "/portfolio", label: "Portfolio", icon: ExternalLink },
-
     {
       href: "#",
       label: "Resources",
       icon: BookOpen,
       submenu: [
+        { href: "/portfolio", label: "Portfolio", icon: ExternalLink },
         { href: "/blog", label: t("nav.blog") },
         { href: "/career", label: t("nav.career"), icon: Briefcase },
         { href: "/free-tools", label: "Free Tools" },
