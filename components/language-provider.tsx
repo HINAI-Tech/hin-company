@@ -22,6 +22,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.about": "About",
     "nav.services": "Services",
     "nav.whyChooseUs": "Why Choose Us",
+    "nav.products": "Products",
     "nav.blog": "Blog",
     "nav.career": "Career",
     "nav.contact": "Contact",
@@ -35,7 +36,6 @@ const translations: Record<Language, Record<string, string>> = {
     "legal.client": "Project Clients",
     "legal.review": "Positive Reviews",
     "legal.satisfaction": "Customer Satisfaction",
-
 
     // Services
     "services.landingpage": "Jasa Pembuatan Landing Page",
@@ -96,7 +96,8 @@ const translations: Record<Language, Record<string, string>> = {
     "career.application.description":
       "Don't see the perfect position? Send us your resume and tell us how you'd like to contribute to our team.",
     "career.application.formTitle": "General Application",
-    "career.application.formDescription": "Fill out the form below and we'll get back to you within 48 hours.",
+    "career.application.formDescription":
+      "Fill out the form below and we'll get back to you within 48 hours.",
     "career.application.firstName": "First Name",
     "career.application.lastName": "Last Name",
     "career.application.email": "Email Address",
@@ -105,19 +106,22 @@ const translations: Record<Language, Record<string, string>> = {
     "career.application.experience": "Years of Experience",
     "career.application.message": "Tell us about yourself",
     "career.application.resume": "Resume/CV",
-    "career.application.uploadText": "Click to upload or drag and drop your resume",
+    "career.application.uploadText":
+      "Click to upload or drag and drop your resume",
     "career.application.submit": "Submit Application",
 
     // Blog
     "blog.title": "Our Blog",
-    "blog.subtitle": "Insights, tips, and trends in web development, SEO, and design",
+    "blog.subtitle":
+      "Insights, tips, and trends in web development, SEO, and design",
     "blog.featured": "Featured Posts",
     "blog.recent": "Recent Posts",
     "blog.categories": "Categories",
     "blog.tags": "Tags",
     "blog.search": "Search articles...",
     "blog.searchResults": "Search Results",
-    "blog.noResults": "No articles found matching your search.",
+    "blog.noResults":
+      "No articles found matching your search.",
     "blog.readTime": "min read",
     "blog.publishedOn": "Published on",
     "blog.author": "Author",
@@ -127,21 +131,24 @@ const translations: Record<Language, Record<string, string>> = {
     "blog.allCategories": "All Categories",
     "blog.loadMore": "Load More Posts",
   },
+
   id: {
     // Navigation
     "nav.home": "Beranda",
     "nav.about": "Tentang",
     "nav.services": "Layanan",
+    "nav.products": "Produk",
     "nav.blog": "Blog",
     "nav.career": "Karir",
     "nav.contact": "Kontak",
     "nav.resellerPartner": "Reseller Partner",
 
     // Legal Components
-        "legal.badge": "LEGALITAS TERJAMIN",
+    "legal.badge": "LEGALITAS TERJAMIN",
     "legal.title": "Terdaftar Secara Resmi Di Pemerintah Indonesia",
     "legal.desc": "Sebagai Digital Agency",
-    "legal.subdesc": "Kami telah membantu ribuan bisnis berkembang lewat platform digital",
+    "legal.subdesc":
+      "Kami telah membantu ribuan bisnis berkembang lewat platform digital",
     "legal.client": "Project Client",
     "legal.review": "Ulasan Positif",
     "legal.satisfaction": "Kepuasan Pelanggan",
@@ -156,8 +163,11 @@ const translations: Record<Language, Record<string, string>> = {
     // Common
     "common.learnMore": "Pelajari Lebih Lanjut",
     "common.learnMore.link": "/about",
+
     "common.getStarted": "Mulai Sekarang",
-    "common.getStarted.link": "https://wa.me/6282144137914?text=Hello%2C%20Saya%20tertarik%20dengan%20layanan%20Anda",
+    "common.getStarted.link":
+      "https://wa.me/6282144137914?text=Hello%2C%20Saya%20tertarik%20dengan%20layanan%20Anda",
+
     "common.readMore": "Baca Selengkapnya",
     "common.readMore.link": "/blog",
 
@@ -173,11 +183,13 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Contact
     "contact.title": "Hubungi Kami",
-    "contact.description": "Siap memulai proyek Anda? Hubungi kami hari ini untuk konsultasi gratis.",
+    "contact.description":
+      "Siap memulai proyek Anda? Hubungi kami hari ini untuk konsultasi gratis.",
 
     // Clients
     "clients.title": "Klien Terpercaya Kami",
-    "clients.subtitle": "Dipercaya oleh perusahaan terkemuka di seluruh dunia",
+    "clients.subtitle":
+      "Dipercaya oleh perusahaan terkemuka di seluruh dunia",
 
     // Career
     "career.hero.badge": "Bergabung dengan Tim Kami",
@@ -203,7 +215,8 @@ const translations: Record<Language, Record<string, string>> = {
     "career.application.description":
       "Tidak melihat posisi yang sempurna? Kirimkan resume Anda dan beri tahu kami bagaimana Anda ingin berkontribusi pada tim kami.",
     "career.application.formTitle": "Aplikasi Umum",
-    "career.application.formDescription": "Isi formulir di bawah ini dan kami akan menghubungi Anda dalam 48 jam.",
+    "career.application.formDescription":
+      "Isi formulir di bawah ini dan kami akan menghubungi Anda dalam 48 jam.",
     "career.application.firstName": "Nama Depan",
     "career.application.lastName": "Nama Belakang",
     "career.application.email": "Alamat Email",
@@ -212,19 +225,22 @@ const translations: Record<Language, Record<string, string>> = {
     "career.application.experience": "Tahun Pengalaman",
     "career.application.message": "Ceritakan tentang diri Anda",
     "career.application.resume": "Resume/CV",
-    "career.application.uploadText": "Klik untuk mengunggah atau seret dan lepas resume Anda",
+    "career.application.uploadText":
+      "Klik untuk mengunggah atau seret dan lepas resume Anda",
     "career.application.submit": "Kirim Aplikasi",
 
     // Blog
     "blog.title": "Blog Kami",
-    "blog.subtitle": "Wawasan, tips, dan tren dalam pengembangan web, SEO, dan desain",
+    "blog.subtitle":
+      "Wawasan, tips, dan tren dalam pengembangan web, SEO, dan desain",
     "blog.featured": "Artikel Unggulan",
     "blog.recent": "Artikel Terbaru",
     "blog.categories": "Kategori",
     "blog.tags": "Tag",
     "blog.search": "Cari artikel...",
     "blog.searchResults": "Hasil Pencarian",
-    "blog.noResults": "Tidak ada artikel yang ditemukan sesuai pencarian Anda.",
+    "blog.noResults":
+      "Tidak ada artikel yang ditemukan sesuai pencarian Anda.",
     "blog.readTime": "menit baca",
     "blog.publishedOn": "Diterbitkan pada",
     "blog.author": "Penulis",
@@ -237,11 +253,16 @@ const translations: Record<Language, Record<string, string>> = {
 }
 
 // --- Provider ---
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
+export function LanguageProvider({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   const [language, setLanguage] = useState<Language>("en")
 
   useEffect(() => {
     const saved = localStorage.getItem("language") as Language
+
     if (saved === "en" || saved === "id") {
       setLanguage(saved)
     }
@@ -253,11 +274,19 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }
 
   const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations["en"]] || key
+    return (
+      translations[language][key as keyof typeof translations["en"]] || key
+    )
   }
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: changeLanguage, t }}>
+    <LanguageContext.Provider
+      value={{
+        language,
+        setLanguage: changeLanguage,
+        t,
+      }}
+    >
       {children}
     </LanguageContext.Provider>
   )
@@ -266,10 +295,15 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 // --- Hook ---
 export function useLanguage() {
   const context = useContext(LanguageContext)
-  if (!context) throw new Error("useLanguage must be used within a LanguageProvider")
+
+  if (!context) {
+    throw new Error(
+      "useLanguage must be used within a LanguageProvider"
+    )
+  }
+
   return context
 }
-
 
 // --- Tombol Toggle Bahasa ---
 export function LanguageToggle() {
@@ -297,10 +331,20 @@ export function Navbar() {
       <span>{t("nav.home")}</span>
       <span>{t("nav.about")}</span>
       <span>{t("nav.services")}</span>
+
+      <a
+        href="https://pos.hinaitech.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {t("nav.products")}
+      </a>
+
       <span>{t("nav.whyChooseUs")}</span>
       <span>{t("nav.blog")}</span>
       <span>{t("nav.career")}</span>
       <span>{t("nav.contact")}</span>
+
       <LanguageToggle />
     </nav>
   )
@@ -355,6 +399,7 @@ export function LegalitasSection() {
                   <p className="text-xs font-semibold text-emerald-600 mb-1">
                     NOMOR AHU RESMI
                   </p>
+
                   <p className="text-sm sm:text-base font-bold text-emerald-800 tracking-wide">
                     AHU-059890.AH.01.30.Tahun 2024
                   </p>
@@ -370,18 +415,33 @@ export function LegalitasSection() {
         {/* BOTTOM STATS */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
           <div className="transition hover:-translate-y-1">
-            <div className="text-5xl font-extrabold mb-2">1.000+</div>
-            <p className="text-white/80">{t("legal.client")}</p>
+            <div className="text-5xl font-extrabold mb-2">
+              1.000+
+            </div>
+
+            <p className="text-white/80">
+              {t("legal.client")}
+            </p>
           </div>
 
           <div className="transition hover:-translate-y-1">
-            <div className="text-5xl font-extrabold mb-2">950+</div>
-            <p className="text-white/80">{t("legal.review")}</p>
+            <div className="text-5xl font-extrabold mb-2">
+              950+
+            </div>
+
+            <p className="text-white/80">
+              {t("legal.review")}
+            </p>
           </div>
 
           <div className="transition hover:-translate-y-1">
-            <div className="text-5xl font-extrabold mb-2">99%</div>
-            <p className="text-white/80">{t("legal.satisfaction")}</p>
+            <div className="text-5xl font-extrabold mb-2">
+              99%
+            </div>
+
+            <p className="text-white/80">
+              {t("legal.satisfaction")}
+            </p>
           </div>
         </div>
       </div>

@@ -84,6 +84,12 @@ export function Navigation() {
     { href: "/why-choose-us", label: t("nav.whyChooseUs"), icon: Wrench },
 
     {
+      href: "https://pos.hinaitech.com",
+      label: t("nav.products"),
+      icon: FaMoneyCheck,
+    },
+
+    {
       href: "/services",
       label: t("nav.services"),
       icon: FaTools,
