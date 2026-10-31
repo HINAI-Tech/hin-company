@@ -1,13 +1,13 @@
+
 "use client"
 
-import { MessageCircle } from "lucide-react"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 
 export function WhatsAppFloat() {
-
   const pathname = usePathname()
 
-  // Jika halaman reseller → jangan tampilkan
+  // Jangan tampilkan pada halaman reseller
   if (pathname.startsWith("/reseller")) {
     return null
   }
@@ -20,7 +20,7 @@ export function WhatsAppFloat() {
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
-    window.open(whatsappUrl, "_blank")
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer")
   }
 
   return (
@@ -32,21 +32,26 @@ export function WhatsAppFloat() {
       <button
         onClick={handleWhatsAppClick}
         className="
-        relative
-        bg-green-500
-        hover:bg-green-600
-        text-white
-        rounded-full
-        p-4
-        shadow-xl
-        transition
-        duration-300
-        hover:scale-110
-        animate-[float_3s_ease-in-out_infinite]
+          relative
+          flex items-center justify-center
+          rounded-full
+          p-2
+          shadow-xl
+          transition-all
+          duration-300
+          hover:scale-110
+          animate-[float_3s_ease-in-out_infinite]
         "
         aria-label="Chat via WhatsApp"
       >
-        <MessageCircle className="h-6 w-6" />
+        <Image
+          src="/images/WA_HINAI_Tech.png"
+          alt="WhatsApp HINAI Tech"
+          width={64}
+          height={64}
+          priority
+          className="h-14 w-14 object-contain"
+        />
       </button>
 
       <style jsx>{`
