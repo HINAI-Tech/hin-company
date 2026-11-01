@@ -43,6 +43,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.seo": "Jasa Penulisan Artikel SEO",
     "services.design": "Branding & Design",
     "services.ar-development": "Jasa Pembuatan Aplikasi AR",
+    "services.applications": "Jasa Pembuatan Aplikasi Mobile",
 
     // Common
     "common.learnMore": "Learn More",
@@ -159,7 +160,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.seo": "Artikel SEO",
     "services.design": "Desain",
     "services.ar-development": "Aplikasi AR",
-
+    "services.applications": "Jasa Pembuatan Aplikasi Mobile",
     // Common
     "common.learnMore": "Pelajari Lebih Lanjut",
     "common.learnMore.link": "/about",

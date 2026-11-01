@@ -58,7 +58,7 @@ import {
   PenTool,
   Wrench,
   ChevronUp,
-  Camera,
+ 
 } from "lucide-react"
 
 const WHATSAPP = "6282144137914"
@@ -479,10 +479,6 @@ export default function ApplicationsPage() {
   return (
     <main className="app-page" id="top">
 
-      {/* ================= NAVIGATION ================= */}
-
-      
-
       {/* ================= HERO ================= */}
 
       <section className="hero-section">
@@ -689,39 +685,49 @@ export default function ApplicationsPage() {
         </div>
       </section>
 
-      {/* ================= INTRO ================= */}
+      
+{/* ================= INTRO ================= */}
 
-      <section className="intro-section section-padding" id="about">
-        <div className="app-container intro-grid" data-reveal id="intro-reveal">
+<section className="intro-section section-padding" id="about">
+  <div
+    className={`app-container intro-grid ${
+      isVisible("intro-reveal") ? "revealed" : ""
+    }`}
+    data-reveal
+    id="intro-reveal"
+  >
+    <div className="section-heading intro-heading">
+      <span className="section-kicker">ABOUT OUR DEVELOPMENT</span>
 
-          <div className={`section-heading ${isVisible("intro-reveal") ? "revealed" : ""}`}>
-            <span className="section-kicker">ABOUT OUR DEVELOPMENT</span>
-            <h2>
-              Lebih dari Sekadar
-              <span> Membuat Aplikasi.</span>
-            </h2>
-          </div>
+      <h2>
+        Lebih dari Sekadar
+        <span> Membuat Aplikasi.</span>
+      </h2>
+    </div>
 
-          <div className={`intro-copy ${isVisible("intro-reveal") ? "revealed" : ""}`}>
-            <p>
-              Setiap bisnis memiliki tantangan dan kebutuhan teknologi
-              yang berbeda. Karena itu, HINAI Tech menghadirkan layanan
-              pengembangan aplikasi custom yang berorientasi pada
-              kebutuhan nyata, bukan sekadar mengikuti tren teknologi.
-            </p>
-            <p>
-              Mulai dari aplikasi sederhana untuk UMKM, sistem operasional
-              perusahaan, hingga produk digital berbasis AI. Kami membantu
-              merancang solusi yang dapat dikembangkan seiring pertumbuhan
-              bisnis Anda.
-            </p>
-            <a href="#process" className="text-link">
-              Kenali proses pengembangan kami <ArrowUpRight size={17} />
-            </a>
-          </div>
+    <div className="intro-copy">
+      <p>
+        Setiap bisnis memiliki tantangan dan kebutuhan teknologi
+        yang berbeda. Karena itu, HINAI Tech menghadirkan layanan
+        pengembangan aplikasi custom yang berorientasi pada
+        kebutuhan nyata, bukan sekadar mengikuti tren teknologi.
+      </p>
 
-        </div>
-      </section>
+      <p>
+        Mulai dari aplikasi sederhana untuk UMKM, sistem operasional
+        perusahaan, hingga produk digital berbasis AI. Kami membantu
+        merancang solusi yang dapat dikembangkan seiring pertumbuhan
+        bisnis Anda.
+      </p>
+
+      <a href="#process" className="text-link">
+        Kenali proses pengembangan kami
+        <ArrowUpRight size={17} />
+      </a>
+    </div>
+  </div>
+</section>
+
 
       {/* ================= SERVICES ================= */}
 
@@ -1540,10 +1546,6 @@ export default function ApplicationsPage() {
         </div>
       </section>
 
-      
-
-      
-
       {/* ================= LOCAL PAGE STYLES ================= */}
 
       <style jsx global>{`
@@ -1629,7 +1631,35 @@ export default function ApplicationsPage() {
           color: var(--hinai-gold-light);
         }
 
-       
+        /* NAVIGATION */
+
+        .app-header {
+          position: absolute;
+          z-index: 100;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 82px;
+          background: rgba(9, 17, 32, .35);
+          border-bottom: 1px solid rgba(255,255,255,.08);
+          transition: .3s ease;
+        }
+
+        .app-header.header-scrolled {
+          position: fixed;
+          background: rgba(255,255,255,.96);
+          backdrop-filter: blur(20px);
+          border-bottom: 1px solid #e9edf2;
+          box-shadow: 0 8px 30px rgba(20,35,55,.07);
+        }
+
+        .nav-inner {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 24px;
+        }
 
         .brand-logo {
           display: inline-flex;
@@ -1702,6 +1732,13 @@ export default function ApplicationsPage() {
           display: flex;
           align-items: center;
           gap: 25px;
+        }
+
+        .desktop-nav a {
+          color: rgba(255,255,255,.77);
+          font-size: 12px;
+          font-weight: 550;
+          transition: color .2s;
         }
 
         .desktop-nav a:hover {
@@ -1915,6 +1952,127 @@ export default function ApplicationsPage() {
           color: var(--hinai-gold-light);
           background: rgba(215,179,106,.06);
         }
+
+
+/* =========================================
+   HINAI TECH - INTRO SECTION FORCE FIX
+========================================= */
+
+.intro-section {
+  display: block !important;
+  position: relative !important;
+  background: #ffffff !important;
+  color: #172033 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Pastikan wrapper tidak tersembunyi */
+.intro-section #intro-reveal {
+  display: grid !important;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: clamp(35px, 7vw, 100px);
+
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Semua elemen heading */
+.intro-section .intro-heading,
+.intro-section .intro-heading * {
+  visibility: visible !important;
+}
+
+/* Label */
+.intro-section .section-kicker {
+  display: inline-block !important;
+  color: #a47725 !important;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  margin-bottom: 20px;
+}
+
+/* Judul */
+.intro-section .intro-heading h2 {
+  color: #111827 !important;
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+  margin: 0;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Judul highlight */
+.intro-section .intro-heading h2 span {
+  display: block;
+  color: #b18435 !important;
+  margin-top: 5px;
+}
+
+/* Konten deskripsi */
+.intro-section .intro-copy {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Paragraf */
+.intro-section .intro-copy p {
+  color: #566174 !important;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.95;
+  margin: 0 0 18px;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Link */
+.intro-section .intro-copy .text-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 9px;
+  color: #9a7028 !important;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.intro-section .intro-copy .text-link:hover {
+  color: #684916 !important;
+}
+
+/* Pastikan elemen anak tidak ikut tersembunyi */
+.intro-section #intro-reveal.revealed,
+.intro-section #intro-reveal.revealed * {
+  visibility: visible !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .intro-section #intro-reveal {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .intro-section .intro-heading h2 {
+    font-size: clamp(32px, 8vw, 43px);
+    letter-spacing: -1.2px;
+  }
+
+  .intro-section .intro-copy p {
+    font-size: 14px;
+  }
+}
 
         .hero-trust {
           margin-top: 48px;
@@ -2719,150 +2877,329 @@ export default function ApplicationsPage() {
 
         .section-link:hover { gap: 15px; }
 
-        .service-grid {
-          display: grid;
-          grid-template-columns: repeat(2,1fr);
-          gap: 18px;
-        }
+        
+/* =========================================
+   SERVICES GRID — HINAI TECH
+   FIX: TEXT VISIBILITY + COLOR + REVEAL
+========================================= */
 
-        .service-card {
-          padding: 31px;
-          background: #fff;
-          border: 1px solid #ebedf1;
-          border-radius: 10px;
-          transition: .3s ease;
-          position: relative;
-          overflow: hidden;
-        }
+.service-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  position: relative;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
 
-        .service-card::after {
-          content: "";
-          position: absolute;
-          height: 3px;
-          width: 0;
-          left: 0;
-          bottom: 0;
-          background: var(--hinai-gold);
-          transition: width .4s;
-        }
+/* SERVICE CARD */
+.service-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
 
-        .service-card:hover {
-          transform: translateY(-6px);
-          border-color: #dfc58f;
-          box-shadow: 0 20px 45px rgba(21,36,59,.07);
-        }
+  min-width: 0;
+  padding: 31px;
 
-        .service-card:hover::after { width: 100%; }
+  background: #ffffff !important;
+  color: #263449 !important;
 
-        .service-card-top {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 25px;
-        }
+  border: 1px solid #ebedf1;
+  border-radius: 10px;
 
-        .service-number {
-          color: #b5a17d;
-          font-size: 11px;
-          font-weight: 800;
-          letter-spacing: 1px;
-        }
+  overflow: hidden;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0);
 
-        .service-icon {
-          width: 49px;
-          height: 49px;
-          display: grid;
-          place-items: center;
-          border-radius: 11px;
-          background: #f6f0e5;
-          color: #a18146;
-          margin-right: auto;
-          margin-left: 16px;
-          transition: .3s;
-        }
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
 
-        .service-card:hover .service-icon {
-          transform: rotateY(180deg);
-          background: #172943;
-          color: #f0d69c;
-        }
+/* GARIS AKSEN BAWAH */
+.service-card::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  background: var(--hinai-gold, #d7b36a);
+  transition: width .4s ease;
+  pointer-events: none;
+}
 
-        .service-arrow {
-          color: #a8b0bd;
-          transition: .3s;
-        }
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #dfc58f;
+  box-shadow: 0 20px 45px rgba(21,36,59,.07);
+}
 
-        .service-card:hover .service-arrow {
-          color: #ad8645;
-          transform: translate(3px,-3px);
-        }
+.service-card:hover::after {
+  width: 100%;
+}
 
-        .service-card h3 {
-          color: #14223a;
-          font-size: 21px;
-          letter-spacing: -.5px;
-          margin: 0 0 11px;
-        }
+/* TOP CARD */
+.service-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
 
-        .service-card > p {
-          color: #768194;
-          font-size: 12px;
-          line-height: 1.85;
-          min-height: 45px;
-          margin: 0 0 20px;
-        }
+.service-number {
+  color: #a18146 !important;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
 
-        .service-card ul {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 11px;
-          padding: 0;
-          margin: 0;
-          list-style: none;
-        }
+/* SERVICE ICON */
+.service-icon {
+  width: 49px;
+  height: 49px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
 
-        .service-card li {
-          display: flex;
-          align-items: center;
-          gap: 7px;
-          color: #59667a;
-          font-size: 10px;
-        }
+  background: #f6f0e5 !important;
+  color: #a18146 !important;
 
-        .service-card li svg {
-          flex-shrink: 0;
-          color: #b18b4b;
-        }
+  margin-right: auto;
+  margin-left: 16px;
 
-        .service-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 7px;
-          margin-top: 23px;
-        }
+  transition: .3s ease;
+}
 
-        .service-tags span,
-        .platform-tags i,
-        .portfolio-tags i {
-          font-style: normal;
-          font-size: 9px;
-          color: #59667a;
-          background: #f2f4f7;
-          padding: 7px 10px;
-          border-radius: 4px;
-        }
+.service-icon svg {
+  color: inherit !important;
+  stroke: currentColor;
+}
 
-        .service-bottom-link {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          color: #98743c;
-          font-size: 11px;
-          font-weight: 800;
-          margin-top: 25px;
-          padding-top: 16px;
-          border-top: 1px solid #edf0f3;
-        }
+.service-card:hover .service-icon {
+  transform: rotateY(180deg);
+  background: #172943 !important;
+  color: #f0d69c !important;
+}
+
+/* ARROW */
+.service-arrow {
+  color: #8b96a7 !important;
+  transition: .3s ease;
+}
+
+.service-arrow svg {
+  color: inherit !important;
+}
+
+.service-card:hover .service-arrow {
+  color: #ad8645 !important;
+  transform: translate(3px, -3px);
+}
+
+/* CARD TITLE */
+.service-card h3 {
+  display: block;
+  color: #14223a !important;
+
+  font-size: 21px;
+  line-height: 1.35;
+  letter-spacing: -.5px;
+  font-weight: 800;
+
+  margin: 0 0 11px;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* CARD DESCRIPTION */
+.service-card > p {
+  display: block;
+  color: #59667a !important;
+
+  font-size: 12px;
+  line-height: 1.85;
+  font-weight: 400;
+
+  min-height: 45px;
+  margin: 0 0 20px;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* FEATURES */
+.service-card ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.service-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+
+  color: #46546a !important;
+  font-size: 10px;
+  line-height: 1.6;
+  font-weight: 500;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.service-card li svg {
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  margin-top: 1px;
+  color: #a17d40 !important;
+  stroke: currentColor;
+}
+
+/* TECHNOLOGY TAGS */
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 23px;
+}
+
+.service-tags span {
+  display: inline-flex;
+  align-items: center;
+
+  font-style: normal;
+  font-size: 9px;
+  font-weight: 600;
+
+  color: #45536a !important;
+  background: #f0f2f5 !important;
+
+  padding: 7px 10px;
+  border: 1px solid #e8ebef;
+  border-radius: 4px;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* BOTTOM LINK */
+.service-bottom-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  color: #98743c !important;
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #edf0f3;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.service-bottom-link svg {
+  color: #98743c !important;
+  flex-shrink: 0;
+}
+
+.service-bottom-link:hover {
+  color: #684916 !important;
+}
+
+/* =========================================
+   SERVICE REVEAL CONFLICT FIX
+   Hanya berlaku pada service-grid
+========================================= */
+
+/* Jika service-grid memakai data-reveal */
+.service-grid[data-reveal],
+.service-grid[data-reveal].revealed {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Jika masing-masing kartu memakai data-reveal */
+.service-grid .service-card[data-reveal],
+.service-grid .service-card[data-reveal].revealed {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Pastikan isi kartu tidak ikut tersembunyi */
+.service-grid .service-card *,
+.service-grid .service-card *::before,
+.service-grid .service-card *::after {
+  visibility: visible;
+}
+
+/* TABLET */
+@media (max-width: 850px) {
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .service-card {
+    padding: 25px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .service-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .service-card {
+    padding: 23px;
+  }
+
+  .service-card h3 {
+    font-size: 19px;
+  }
+
+  .service-card > p {
+    font-size: 12px;
+    min-height: auto;
+  }
+
+  .service-card ul {
+    gap: 12px 8px;
+  }
+
+  .service-card li {
+    font-size: 10px;
+  }
+
+  .service-tags {
+    margin-top: 18px;
+  }
+}
+
 
         /* WHY HINAI */
 
@@ -4518,8 +4855,15 @@ export default function ApplicationsPage() {
 
           .desktop-nav.nav-open { display: flex; }
 
-       
+          .desktop-nav a {
+            padding: 13px 0;
+            font-size: 12px;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+          }
 
+          .header-scrolled .desktop-nav {
+            background: white;
+          }
 
           .header-scrolled .desktop-nav a {
             color: #354258;

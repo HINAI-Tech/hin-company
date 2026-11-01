@@ -97,6 +97,7 @@ export function Navigation() {
         { href: "/services/web", label: t("services.web") },
         { href: "/services/landing-page", label: t("services.landingpage") },
         { href: "/services/ar-development", label: t("Jasa Pembuatan Aplikasi AR") },
+        { href: "/services/applications", label: t("Jasa Pembuatan Aplikasi Mobile") },
         { href: "/services/seo-articles", label: t("services.seo") },
         { href: "/services/ai-ml", label: t("Jasa ML & Data Science") },
         { href: "/services/design", label: t("services.design") },
