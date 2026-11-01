@@ -109,6 +109,7 @@ export function Navigation() {
       label: "Resources",
       icon: BookOpen,
       submenu: [
+        { href: "/methodology", label: t("nav.methodology"), icon: BookOpen },
         { href: "/portfolio", label: "Portfolio", icon: ExternalLink },
         { href: "/blog", label: t("nav.blog") },
         { href: "/career", label: t("nav.career"), icon: Briefcase },

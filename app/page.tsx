@@ -30,6 +30,7 @@ export default function HomePage() {
           <Services />
           <BirdsAndClouds />
           <About />
+        
           <LegalitasSection />
           <ClientLogos />
           <Portfolio />
