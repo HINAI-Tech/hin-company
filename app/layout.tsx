@@ -1,3 +1,4 @@
+
 import type React from "react"
 import type { Metadata } from "next"
 import { Suspense } from "react"
@@ -14,7 +15,6 @@ import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import PurchaseNotification from "@/components/PurchaseNotification"
 
-// @ts-ignore
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -74,18 +74,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="id"
-      suppressHydrationWarning
-    >
+    <html lang="id" suppressHydrationWarning>
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`}
       >
         <Suspense fallback={null}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
+            defaultTheme="light"
+            enableSystem={false}
             disableTransitionOnChange
           >
             <LanguageProvider>
