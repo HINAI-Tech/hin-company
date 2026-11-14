@@ -20,6 +20,8 @@ import {
   DollarSign,
   Wrench,
   ExternalLink,
+  PenTool,
+  Megaphone,
 } from "lucide-react"
 
 import { FaMoneyCheck, FaTools } from "react-icons/fa"
@@ -137,6 +139,7 @@ export function Navigation() {
     {
       href: "/blog",
       label: "Blogs",
+      icon: Megaphone,
     },
     {
       href: "/services",
