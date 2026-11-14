@@ -1,6 +1,8 @@
 allowBuilds:
-  bcrypt: set this to true or false
-  esbuild: set this to true or false
+  '@tailwindcss/oxide': false
+  bcrypt: false
+  esbuild: false
+  workerd: false
 ignoredBuiltDependencies:
   - '@tailwindcss/oxide'
   - esbuild

@@ -1,3 +1,4 @@
+
 import { CareerHero } from "@/components/career/career-hero"
 import { CareerPositions } from "@/components/career/career-positions"
 import { CareerBenefits } from "@/components/career/career-benefits"
@@ -11,7 +12,7 @@ export default function CareerPage() {
       <CareerPositions />
       <CareerBenefits />
       <CareerCulture />
-      <CareerApplication />
+      <CareerApplication selectedPosition="" />
     </main>
   )
 }
