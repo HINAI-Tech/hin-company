@@ -25,3 +25,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Generated build and cache files
+/.cloudflare/
+/.vinext/
+/dist/
