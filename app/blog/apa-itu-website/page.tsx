@@ -150,7 +150,7 @@ export default function Page() {
               </p>
 
               <div className="flex flex-wrap gap-3 text-sm text-gray-500 border-y py-4">
-                <span>Penulis: HINAI Tech</span>
+                <span>Penulis: Rodhi Faisal Mufid</span>
                 <span>•</span>
                 <span>Kategori: Teknologi</span>
                 <span>•</span>

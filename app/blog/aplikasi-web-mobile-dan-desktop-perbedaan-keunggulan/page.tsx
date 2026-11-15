@@ -1960,7 +1960,7 @@ export default function ArticlePage() {
                   </div>
                   <div className="flex justify-between gap-3">
                     <span>Penulis</span>
-                    <strong className="text-slate-900">HINAI Tech</strong>
+                    <strong className="text-slate-900">Rodhi Faisal Mufid</strong>
                   </div>
                   <div className="flex justify-between gap-3">
                     <span>Terbit</span>
