@@ -11,6 +11,37 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Berapa Biaya Pembuatan Website? Faktor yang Memengaruhi Harga",
+    excerpt:
+      "Biaya pembuatan website bervariasi tergantung jenis, fitur, desain, dan kompleksitasnya. Temukan faktor-faktor yang memengaruhi harga website.",
+    image: "/artikel/why-choose-us.png",
+    category: "Website Development",
+    date: "2026-10-31",
+    readTime: 9,
+    slug: "berapa-biaya-pembuatan-website-faktor-yang-memengaruhi-harga",     
+  },
+  {
+    title: "Mengapa Bisnis Membutuhkan Website Profesional di Era Digital?",
+    excerpt:
+      "Website profesional adalah fondasi penting untuk membangun kehadiran digital bisnis, meningkatkan kredibilitas, dan memperluas jangkauan pasar.",
+    image: "/artikel/butuh-website.jpg",
+    category: "Website Development",
+    date: "2026-10-30",
+    readTime: 8,
+    slug: "mengapa-bisnis-butuh-website-profesional",
+  },
+  {
+    title: "Website vs Landing Page: Perbedaan, Fungsi, dan Kegunaannya",
+    excerpt:
+      "Masih bingung memilih website atau landing page untuk bisnis? Kenali perbedaan, fungsi, kelebihan, kekurangan, biaya, serta kapan bisnis membutuhkan keduanya.",
+    image: "/artikel/landing-web.jpg",
+    category: "Website & Landing Page",
+    date: "2026-10-29",
+    readTime: 12,
+    slug: "website-vs-landing-page",
+  },
+
+  {
     title: "Jasa Pembuatan Website Bandar Lampung",
     excerpt:
       "Solusi jasa pembuatan website profesional untuk bisnis, UMKM, perusahaan, dan institusi pendidikan di Bandar Lampung.",
