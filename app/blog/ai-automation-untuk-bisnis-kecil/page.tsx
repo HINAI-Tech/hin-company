@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "AI Automation untuk Bisnis Kecil",
     description:
       "Panduan lengkap penggunaan AI untuk otomatisasi bisnis kecil dan UMKM.",
-    images: ["/blog/ai-automation-business.jpg"],
+    images: ["/artikel/ai-automation-business.jpg"],
   },
 }
 
@@ -53,7 +53,7 @@ export default function Page() {
 
             {/* IMAGE */}
             <img
-              src="/blog/ai-automation-business.jpg"
+              src="/artikel/ai-automation-business.jpg"
               alt="AI Automation HINAI Tech"
               className="w-full rounded-2xl shadow-md mb-14"
             />

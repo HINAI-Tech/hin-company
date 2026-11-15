@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "Cara Website Muncul di Halaman Pertama Google",
     description:
       "Panduan SEO lengkap untuk meningkatkan ranking website di Google.",
-    images: ["/blog/seo-google-first-page.jpg"],
+    images: ["/artikel/seo-google-first-page.jpg"],
   },
 }
 

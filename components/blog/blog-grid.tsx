@@ -1,35 +1,45 @@
+
 "use client"
 
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Calendar, Clock, ArrowRight } from "lucide-react"
-import { useLanguage } from "@/components/language-provider"
 import Link from "next/link"
-import { blogPosts } from "@/lib/blog-data"
+import { sortedBlogPosts } from "@/lib/blog-data"
+
+const INITIAL_POSTS = 5
 
 export function BlogGrid() {
-  const { t } = useLanguage()
-
   const [showAll, setShowAll] = useState(false)
 
-  // 3 artikel awal
-  const visiblePosts = showAll ? blogPosts : blogPosts.slice(0, 3)
+  // Tampilkan 5 artikel atau seluruh artikel
+  const visiblePosts = showAll
+    ? sortedBlogPosts
+    : sortedBlogPosts.slice(0, INITIAL_POSTS)
 
-  // RELATED POSTS (ambil sisanya)
-  const relatedPosts = blogPosts.slice(3, 6)
+  const formatDate = (date: string) =>
+    new Date(date + "T00:00:00").toLocaleDateString("id-ID", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    })
 
   return (
     <section className="w-full">
 
       {/* HEADER */}
-      <div className="flex items-center justify-between mb-10">
+      <div className="flex flex-col gap-2 mb-10">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-          {t?.("blog.recent") ?? "Recent Articles"}
+          Recent Posts
         </h2>
+
+        <p className="text-sm text-muted-foreground">
+          Insight, tips, dan informasi terbaru dari HINAI Tech.
+        </p>
       </div>
 
-      {/* MAIN GRID */}
+      {/* ARTICLE GRID */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
 
         {visiblePosts.map((post) => (
@@ -40,13 +50,17 @@ export function BlogGrid() {
             <CardContent className="p-0">
 
               {/* IMAGE */}
-              <div className="aspect-[16/9] overflow-hidden">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="block aspect-[16/9] overflow-hidden"
+              >
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-              </div>
+              </Link>
 
               {/* CONTENT */}
               <div className="p-6 space-y-4">
@@ -59,7 +73,7 @@ export function BlogGrid() {
 
                   <div className="flex items-center gap-1">
                     <Calendar className="h-3 w-3" />
-                    <span>{post.date}</span>
+                    <span>{formatDate(post.date)}</span>
                   </div>
 
                   <div className="flex items-center gap-1">
@@ -70,81 +84,51 @@ export function BlogGrid() {
                 </div>
 
                 <h3 className="text-xl font-bold group-hover:text-primary transition">
-                  {post.title}
+                  <Link href={`/blog/${post.slug}`}>
+                    {post.title}
+                  </Link>
                 </h3>
 
                 <p className="text-sm text-muted-foreground text-justify leading-relaxed">
                   {post.excerpt}
                 </p>
 
-                <Link href={`/blog/${post.slug}`}>
-                  <Button variant="ghost" className="px-0 text-primary">
-                    Read Article
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all"
+                >
+                  Read Article
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
 
               </div>
             </CardContent>
           </Card>
         ))}
+
       </div>
 
-      {/* TOGGLE BUTTON */}
-      {blogPosts.length > 3 && (
+      {/* SHOW ALL / SHOW LESS */}
+      {sortedBlogPosts.length > INITIAL_POSTS && (
         <div className="flex justify-center mt-14">
+
           <Button
             variant="outline"
             size="lg"
-            onClick={() => setShowAll(!showAll)}
-            className="px-10"
+            onClick={() => setShowAll((previous) => !previous)}
+            className="px-10 rounded-full"
           >
             {showAll ? "Show Less" : "Read All Articles"}
+
+            <ArrowRight
+              className={`ml-2 h-4 w-4 transition-transform ${
+                showAll ? "rotate-[-90deg]" : "rotate-90"
+              }`}
+            />
           </Button>
+
         </div>
       )}
-
-      {/* RELATED POSTS SECTION */}
-      <div className="mt-20">
-        <h3 className="text-xl md:text-2xl font-bold mb-6">
-          Related Posts
-        </h3>
-
-        <div className="grid md:grid-cols-3 gap-6">
-
-          {relatedPosts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`}>
-              <Card className="group hover:shadow-lg transition border border-border/50 rounded-xl overflow-hidden">
-
-                <div className="aspect-[16/9] overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition"
-                  />
-                </div>
-
-                <CardContent className="p-4 space-y-2">
-
-                  <div className="text-xs text-muted-foreground">
-                    {post.category}
-                  </div>
-
-                  <h4 className="font-semibold group-hover:text-primary transition line-clamp-2">
-                    {post.title}
-                  </h4>
-
-                  <p className="text-xs text-muted-foreground line-clamp-2">
-                    {post.excerpt}
-                  </p>
-
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-
-        </div>
-      </div>
 
     </section>
   )

@@ -11,7 +11,7 @@ export default function CareerPage() {
       <CareerPositions />
       <CareerBenefits />
       <CareerCulture />
-      <CareerApplication />
+      <CareerApplication selectedPosition={""} />
     </main>
   )
 }

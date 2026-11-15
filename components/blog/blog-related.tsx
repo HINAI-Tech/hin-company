@@ -22,6 +22,18 @@ export function BlogRelated() {
     },
 
     {
+      title:
+        "Apa itu website? Pengertian, Fungsi, Jenis, dan Manfaatnya untuk Bisnis",
+      excerpt:
+        "Website adalah platform digital penting untuk bisnis, memberikan informasi, layanan, dan meningkatkan kepercayaan pelanggan.",
+      image: "/artikel/apa-itu-website.jpg",
+      category: "Website Development",
+      date: "2026-10-28",
+      readTime: 7,
+      slug: "apa-itu-website",
+    },
+
+    {
       title: "Apa Itu Landing Page dan Mengapa Bisnis Anda Membutuhkannya?",
       excerpt:
         "Pelajari bagaimana landing page meningkatkan konversi iklan dan penjualan bisnis.",

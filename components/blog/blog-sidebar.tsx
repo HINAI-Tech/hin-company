@@ -1,3 +1,4 @@
+
 "use client"
 
 import Link from "next/link"
@@ -19,29 +20,17 @@ import {
   FolderOpen,
 } from "lucide-react"
 
+import { sortedBlogPosts } from "@/lib/blog-data"
+
 export function BlogSidebar() {
-  const categories = [
-    {
-      name: "Website Development",
-      count: 1,
-    },
-    {
-      name: "Landing Page",
-      count: 1,
-    },
-    {
-      name: "SEO",
-      count: 1,
-    },
-    {
-      name: "Artificial Intelligence",
-      count: 1,
-    },
-    {
-      name: "Cyber Security",
-      count: 1,
-    },
-  ]
+  const categories = Array.from(
+    new Set(sortedBlogPosts.map((post) => post.category))
+  ).map((name) => ({
+    name,
+    count: sortedBlogPosts.filter(
+      (post) => post.category === name
+    ).length,
+  }))
 
   const tags = [
     "Website",
@@ -56,46 +45,12 @@ export function BlogSidebar() {
     "Website Bisnis",
   ]
 
-  const recentPosts = [
-    {
-      title: "Jasa Pembuatan Website Bandar Lampung",
-      slug: "/blog/jasa-pembuatan-website-bandar-lampung",
-      date: "2026-06-15",
-    },
-    {
-      title:
-        "Apa Itu Landing Page dan Mengapa Bisnis Anda Membutuhkannya?",
-      slug: "/blog/apa-itu-landing-page",
-      date: "2026-06-15",
-    },
-    {
-      title:
-        "Cara Website Muncul di Halaman Pertama Google",
-      slug:
-        "/blog/cara-website-muncul-di-halaman-pertama-google",
-      date: "2026-06-15",
-    },
-    {
-      title:
-        "AI Automation untuk Bisnis Kecil",
-      slug:
-        "/blog/ai-automation-untuk-bisnis-kecil",
-      date: "2026-06-15",
-    },
-    {
-      title:
-        "Cara Melindungi Website dari Hacker",
-      slug:
-        "/blog/cara-melindungi-website-dari-hacker",
-      date: "2026-06-15",
-    },
-  ]
+  const recentPosts = sortedBlogPosts.slice(0, 6)
 
   return (
     <aside className="space-y-6">
 
       {/* SEARCH */}
-
       <Card className="border-border/50">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-lg">
@@ -118,7 +73,6 @@ export function BlogSidebar() {
       </Card>
 
       {/* CATEGORIES */}
-
       <Card className="border-border/50">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-lg">
@@ -131,29 +85,33 @@ export function BlogSidebar() {
           <div className="space-y-2">
 
             <Button
+              asChild
               variant="ghost"
               className="w-full justify-between"
             >
-              <span>Semua Artikel</span>
-              <span>5</span>
+              <Link href="/blog">
+                <span>Semua Artikel</span>
+                <span>{sortedBlogPosts.length}</span>
+              </Link>
             </Button>
 
             {categories.map((category) => (
-              <Button
+              <div
                 key={category.name}
-                variant="ghost"
-                className="w-full justify-between"
+                className="flex items-center justify-between px-4 py-2 text-sm"
               >
                 <span>{category.name}</span>
-                <span>{category.count}</span>
-              </Button>
+                <span className="text-muted-foreground">
+                  {category.count}
+                </span>
+              </div>
             ))}
+
           </div>
         </CardContent>
       </Card>
 
       {/* RECENT POSTS */}
-
       <Card className="border-border/50">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-lg">
@@ -168,7 +126,7 @@ export function BlogSidebar() {
             {recentPosts.map((post) => (
               <Link
                 key={post.slug}
-                href={post.slug}
+                href={`/blog/${post.slug}`}
                 className="block border-b border-border/50 pb-4 last:border-0 last:pb-0"
               >
                 <h4 className="font-medium text-foreground transition-colors hover:text-primary">
@@ -177,7 +135,7 @@ export function BlogSidebar() {
 
                 <p className="mt-1 text-sm text-muted-foreground">
                   {new Date(
-                    post.date
+                    post.date + "T00:00:00"
                   ).toLocaleDateString("id-ID")}
                 </p>
               </Link>
@@ -188,7 +146,6 @@ export function BlogSidebar() {
       </Card>
 
       {/* TAGS */}
-
       <Card className="border-border/50">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-lg">
@@ -205,12 +162,7 @@ export function BlogSidebar() {
                 key={tag}
                 variant="outline"
                 size="sm"
-                className="
-                  bg-transparent
-                  text-xs
-                  hover:bg-primary
-                  hover:text-primary-foreground
-                "
+                className="bg-transparent text-xs hover:bg-primary hover:text-primary-foreground"
               >
                 {tag}
               </Button>
@@ -221,7 +173,6 @@ export function BlogSidebar() {
       </Card>
 
       {/* CTA */}
-
       <Card className="border-primary/20 bg-primary/5">
         <CardContent className="p-6 text-center">
           <h3 className="mb-2 text-lg font-bold">
@@ -237,6 +188,7 @@ export function BlogSidebar() {
             <Link
               href="https://wa.me/6282144137914"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Konsultasi Gratis
             </Link>
