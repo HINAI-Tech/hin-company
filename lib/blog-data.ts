@@ -10,6 +10,20 @@ export type BlogPost = {
 }
 
 export const blogPosts: BlogPost[] = [
+
+  {
+    title:
+      "Aplikasi Web, Mobile, dan Desktop: Apa Perbedaan dan Keunggulannya?",
+    excerpt:
+      "Kenali perbedaan aplikasi web, mobile, dan desktop dari cara kerja, kelebihan, kekurangan, teknologi, biaya pengembangan, hingga cara memilih solusi yang tepat untuk bisnis.",
+    image: "/artikel/aplikasi-web-mobile-desktop.jpg",
+    category: "Teknologi",
+    date: "2026-11-01",
+    readTime: 18,
+    slug:
+      "aplikasi-web-mobile-dan-desktop-perbedaan-keunggulan",
+  },
+
   {
     title: "Berapa Biaya Pembuatan Website? Faktor yang Memengaruhi Harga",
     excerpt:
