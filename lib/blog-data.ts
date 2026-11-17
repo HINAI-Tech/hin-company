@@ -10,6 +10,31 @@ export type BlogPost = {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    title:
+      "Manfaat Video Animasi 2D dan 3D untuk Promosi, Pendidikan, dan Bisnis",
+    excerpt:
+      "Pelajari manfaat video animasi 2D dan 3D untuk promosi, pendidikan, dan bisnis. Kenali perbedaan, proses produksi, contoh penerapan, serta solusi animasi dari HINAI Tech.",
+    image: "/artikel/manfaat-video-animasi-2d-3d.jpg",
+    category: "Animation, AR/VR & IoT",
+    date: "2026-11-03",
+    readTime: 15,
+    slug: "manfaat-video-animasi-2d-3d-promosi-pendidikan-bisnis",
+  },
+
+  {
+    title:
+      "Mengenal Artificial Intelligence, Machine Learning, dan Deep Learning serta Penerapannya dalam Dunia Bisnis",
+    excerpt:
+      "Pelajari pengertian Artificial Intelligence, Machine Learning, dan Deep Learning, perbedaan, cara kerja, contoh penerapan, manfaat, serta implementasinya untuk bisnis modern.",
+    image:
+      "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&fm=jpg&q=85&w=1200",
+    category: "Artificial Intelligence",
+    date: "2026-11-02",
+    readTime: 15,
+    slug:
+      "mengenal-artificial-intelligence-machine-learning-deep-learning",
+  },
 
   {
     title:
